@@ -26,7 +26,12 @@ Rules:
 #   - Do NOT print anything
 #
 def get_value(d: dict, key: str):
-    pass
+    result = []
+    duration = 0
+    for value in d:
+        result.append(d[value](duration))
+    return result
+
 
 
 # -------------------------------------------------
