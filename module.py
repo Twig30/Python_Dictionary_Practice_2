@@ -26,12 +26,7 @@ Rules:
 #   - Do NOT print anything
 #
 def get_value(d: dict, key: str):
-    result = []
-    duration = 0
-    for value in d:
-        result.append(d[value](duration))
-    return result
-
+    return d[key]
 
 
 # -------------------------------------------------
@@ -49,7 +44,13 @@ def get_value(d: dict, key: str):
 #   - Do NOT print anything
 #
 def key_exists(d: dict, key: str) -> bool:
-    pass
+    output = True 
+    if key in d: 
+        output = True
+    else:
+        output = False 
+    return output
+   
 
 
 # -------------------------------------------------
@@ -68,8 +69,12 @@ def key_exists(d: dict, key: str) -> bool:
 #   - Do NOT print anything
 #
 def total_values(d: dict) -> int:
-    pass
-
+    result = 0 
+    for key in d:
+        current_value = d[key]
+        result += current_value
+    return result
+    
 
 # -------------------------------------------------
 # count_value
@@ -89,6 +94,9 @@ def total_values(d: dict) -> int:
 #
 def count_value(d: dict, target) -> int:
     pass
+    
+   
+    
 
 
 # -------------------------------------------------
@@ -127,4 +135,10 @@ def find_max_key(d: dict):
 #   - Do NOT print anything
 #
 def invert_dictionary(d: dict) -> dict:
-    pass
+    output = ()
+
+for key in d:
+    new_value = key 
+    new_key = d[key]
+    output[new_key] = new_value
+return output
